@@ -7,7 +7,7 @@ Promise 对象用于表示一个异步操作的最终完成 (或失败)及其结
 2. 已兑现（fulfilled）: 意味着操作成功完成。
 3. 已拒绝（rejected）: 意味着操作失败。
 
-## 成功状态
+## 成功状态 Promise.prototype.then()
 
 ```
     new Promise(resolve => {
@@ -17,7 +17,7 @@ Promise 对象用于表示一个异步操作的最终完成 (或失败)及其结
     .then() // 接受成功状态后返回成功状态
 ```
 
-## 失败状态
+## 失败状态 Promise.prototype.catch()
 
 ```
     new Promise((resolve, reject) => {
@@ -25,6 +25,16 @@ Promise 对象用于表示一个异步操作的最终完成 (或失败)及其结
         reject('失败')
     }) // 失败状态
     .catch() // 接受失败状态后返回成功状态
+```
+
+## 必定执行 Promise.prototype.finally()
+
+```
+    new Promise((resolve, reject) => {
+        //...
+        reject('失败') || resolve('成功')
+    }) 
+    .finally() // 不管成功还是失败都会执行
 ```
 
 ## Promise.all(iterable)

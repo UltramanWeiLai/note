@@ -30,6 +30,19 @@
         const str = 'Tiga'
         const arr = [...str] // 等同于： arr = ['T', 'i', 'g', 'a']
     }
+
+    // ------------------------------
+
+    {
+        const obj1 = {
+            name: 'Tiga',
+            age: 24
+        }
+
+        console.log({...obj1}) // { name: 'Tiga', age: 24 }
+    }
+
+    
 ```
 
 ## rest 
@@ -57,6 +70,27 @@
         fn(1) // []
         fn(1, 2) // [2]
         fn(1, 2, 3) // [2, 3]
+    }
+
+    {
+        const obj1 = {
+            name: 'Tiga'
+        }
+
+        const obj2 = {
+            age: 24
+        }
+
+        // 浅克隆
+        const obj3 = {
+            ...obj1,
+            ...obj2,
+            ooo: '111'
+        }
+
+        const { name, ...rest } = obj3
+
+        // name: 'Tiga' rest: { age: 24, ooo: '111' }
     }
 
 ```
