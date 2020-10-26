@@ -1,6 +1,9 @@
 # Generator
 
-生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。
+生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。  
+generator 可以 控制代码的执行和停止 执行和停止的区间节点由 yield 来控制  
+就和打断点的感觉差不多  
+通过 next() 方法来执行代码到下一个节点(断点)处
 
 ## 使用
 
