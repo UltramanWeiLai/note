@@ -39,6 +39,9 @@ Promise 对象用于表示一个异步操作的最终完成 (或失败)及其结
 
 ## Promise.all(iterable)
 
+等待 iterable 数组中所有的代码执行完成后，返回一个返回值的数组  
+当 iterable 数组中的执行代码有一个返回失败的时候，就只返回该信息
+
 这个方法返回一个新的promise对象  
 该promise对象在iterable参数对象里所有的promise对象都成功的时候才会触发成功  
 一旦有任何一个iterable里面的promise对象失败则立即触发该promise对象的失败  
@@ -47,6 +50,8 @@ Promise 对象用于表示一个异步操作的最终完成 (或失败)及其结
 Promise.all方法常被用于处理多个promise对象的状态集合
 
 ## Promise.allSettled(iterable)
+
+正常返回所有 iterable 的内容，不会因为某个状态是失败而只返回失败
 
 等到所有promises都已敲定（settled）（每个promise都已兑现（fulfilled）或已拒绝（rejected））。  
 返回一个promise，该promise在所有promise完成后完成。并带有一个对象数组，每个对象对应每个promise的结果。
@@ -64,6 +69,8 @@ Promise.all方法常被用于处理多个promise对象的状态集合
 返回一个状态为失败的Promise对象，并将给定的失败信息传递给对应的处理方法
 
 ## Promise.resolve(value)
+
+返回一个状态为成功的 Promise 对象
 
 返回一个状态由给定value决定的Promise对象。如果该值是thenable(即，带有then方法的对象)，返回的Promise对象的最终状态由then方法执行决定；否则的话(该value为空，基本类型或者不带then方法的对象),返回的Promise对象状态为fulfilled，并且将该value传递给对应的then方法。通常而言，如果您不知道一个值是否是Promise对象，使用Promise.resolve(value) 来返回一个Promise对象,这样就能将该value以Promise对象形式使用。
 

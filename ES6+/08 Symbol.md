@@ -6,7 +6,9 @@ Symbol 是一种新的原始数据类型，是匿名的并且不可枚举
 2. 一定程度上可以作为私有属性被保护，一般遍历是无法获取 Symbol 为 key 的属性的，但是 Reflect.ownKeys 和 Object.getOwnPropertySymbols 是可以获取的
 3. 可以消除模糊字符串
 
-## 声明
+## 声明 & description
+
+description 是只读属性，是无法进行修改的
 
 ```
     const s1 = Symbol()

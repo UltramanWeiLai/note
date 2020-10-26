@@ -8,6 +8,8 @@
 
 ## ES6
 
+### 使用
+
 ```
     {
         // a.js
@@ -45,4 +47,13 @@
         console.log(a3) // 15
         console.log(aaa) // 20
     }
+```
+
+### 动态导入
+
+```
+    import('./**/*.js')
+        .then(mod => {
+            console.log(mod)
+        })
 ```
